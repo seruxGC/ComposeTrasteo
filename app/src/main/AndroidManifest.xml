@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTrasteo">
         <activity
+            android:name=".SlotsAPI"
+            android:exported="true"
+            android:label="@string/title_activity_slots_api"
+            android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
+        <activity
+            android:name=".BotonContenedor"
+            android:exported="true"
+            android:label="@string/title_activity_boton_contenedor"
+            android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

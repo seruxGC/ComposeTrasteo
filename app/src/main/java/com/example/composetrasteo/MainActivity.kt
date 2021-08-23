@@ -3,8 +3,11 @@ package com.example.composetrasteo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -118,7 +121,10 @@ fun ClickCounter(clicks: Int, updateClicks: () -> Unit) {
 }
 
 @Composable
-fun ProfileViewer(usuario: Usuario) {
+fun ProfileViewer(nombreUsuario: String, profesion: String, miembroDesde: String, estadoUsuario: Color) {
+    
+    var seleccionado by remember { mutableStateOf(false)}
+    val colorFondo by animateColorAsState(if (seleccionado) Color.LightGray else Color.Transparent)
 
     Card(
         modifier = Modifier
@@ -128,23 +134,24 @@ fun ProfileViewer(usuario: Usuario) {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(vertical = 15.dp)
+            modifier = Modifier
+                .background(color = colorFondo)
+                .clickable (onClick = {seleccionado = !seleccionado})
         ) {
-            Box {
+            Box (Modifier.padding(top = 10.dp)){
                 Image(
                     painter = painterResource(id = R.drawable.profile_picture),
                     contentDescription = "Imagen perfil",
                     modifier = Modifier
                         .clip(CircleShape)
                         .size(150.dp)
-                        .border(2.dp, usuario.estado.color, CircleShape)
+                        .border(2.dp, estadoUsuario, CircleShape)
                 )
             }
 
-            Text(text = usuario.nombre, fontWeight = FontWeight.Bold)
-            Text(text = "Diseñadora")
-            Text(text = "Miembro desde: 17/02/21", fontWeight = FontWeight.Light)
-
+            Text(text = nombreUsuario, fontWeight = FontWeight.Bold)
+            Text(text = profesion)
+            Text(text = miembroDesde, fontWeight = FontWeight.Light)
         }
     }
 }
@@ -169,7 +176,10 @@ fun DefaultPreview() {
             Divider(modifier = Modifier.padding(vertical = 10.dp), Color.LightGray)
 
             // Visualizador perfil
-            ProfileViewer(usuariosEjemplo[0])
+            ProfileViewer(usuariosEjemplo[0].nombre, 
+                "Diseñador", 
+                "02/04/21",
+                usuariosEjemplo[0].estado.color)
         }
     }
 }
@@ -195,7 +205,10 @@ fun PantallaGenerica(contenido: @Composable () -> Unit) {
 @Preview("Reutilizacion")
 @Composable
 fun PreviewReutilizacion() {
-    PantallaGenerica { ProfileViewer(usuario = usuariosEjemplo[2]) }
+    PantallaGenerica { ProfileViewer(usuariosEjemplo[0].nombre,
+        "Diseñador",
+        "02/04/21",
+        usuariosEjemplo[0].estado.color) }
 }
 
 // ##### Fin Reutilizacion

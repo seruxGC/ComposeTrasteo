@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ComposeTrasteo</string>
+    <string name="title_activity_boton_contenedor">BotonContenedor</string>
+    <string name="title_activity_slots_api">SlotsAPI</string>
 </resources>
