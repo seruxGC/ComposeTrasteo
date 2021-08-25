@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTrasteo">
         <activity
+            android:name=".ScaffoldComponent"
+            android:exported="true"
+            android:label="@string/title_activity_scaffold_component"
+            android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
+        <activity
             android:name=".SlotsAPI"
             android:exported="true"
             android:label="@string/title_activity_slots_api"
