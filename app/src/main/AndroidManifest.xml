@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.composetrasteo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeTrasteo">
+
+        <activity
+            android:name=".ListasElementos"
+            android:exported="true"
+            android:label="@string/title_activity_listas_elementos"
+            android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
         <activity
             android:name=".ScaffoldComponent"
             android:exported="true"
@@ -18,11 +26,6 @@
             android:name=".SlotsAPI"
             android:exported="true"
             android:label="@string/title_activity_slots_api"
-            android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
-        <activity
-            android:name=".BotonContenedor"
-            android:exported="true"
-            android:label="@string/title_activity_boton_contenedor"
             android:theme="@style/Theme.ComposeTrasteo.NoActionBar" />
         <activity
             android:name=".MainActivity"

@@ -21,6 +21,8 @@ import com.example.composetrasteo.ui.theme.ComposeTrasteoTheme
  * BottomAppBar, FloatingActionButton and Drawer. With Scaffold, you make sure these components
  * will be positioned and work together correctly.
  *
+ * * 5 Material Components
+ * https://developer.android.com/codelabs/jetpack-compose-layouts?hl=es-419&continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fcompose%3Fhl%3Des-419%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fjetpack-compose-layouts#5
  */
 class ScaffoldComponent : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

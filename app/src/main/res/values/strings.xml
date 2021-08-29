@@ -3,4 +3,5 @@
     <string name="title_activity_boton_contenedor">BotonContenedor</string>
     <string name="title_activity_slots_api">SlotsAPI</string>
     <string name="title_activity_scaffold_component">ScaffoldComponent</string>
+    <string name="title_activity_listas_elementos">ListasElementos</string>
 </resources>
